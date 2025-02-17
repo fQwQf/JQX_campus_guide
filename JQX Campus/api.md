@@ -4,7 +4,7 @@
 
 ## 一、导游管理
 
-### 1. 导游资质审核
+### 导游资质审核
 ```http
 POST /api/campus/guides/verify
 ```
@@ -20,7 +20,7 @@ POST /api/campus/guides/verify
 待初审 → 院系审核 → 保卫处备案 → 生效
 ```
 
-### 2. 导游档案管理
+### 导游档案管理
 ```http
 PUT /api/campus/guides/{guide_id}/profile
 ```
@@ -38,7 +38,7 @@ const validateMedia = (files) => {
 
 ## 二、时间管理
 
-### 3. 时间槽批量设置
+### 时间槽批量设置
 ```http
 POST /api/guide/schedule
 ```
@@ -49,7 +49,7 @@ def detect_conflict(existing, new_slot):
                for (exist_start, exist_end) in existing)
 ```
 
-### 4. 临时关闭时间段
+### 临时关闭时间段
 ```http
 PATCH /api/campus/timeslots/block
 ```
@@ -66,7 +66,7 @@ PATCH /api/campus/timeslots/block
 
 ## 三、订单管理
 
-### 5. 多模式订单创建
+### 多模式订单创建
 ```http
 POST /api/campus/orders
 ```
@@ -81,7 +81,7 @@ POST /api/campus/orders
 }
 ```
 
-### 6. 智能派单引擎
+### 智能派单引擎
 ```http
 POST /api/campus/orders/dispatch
 ```
@@ -96,7 +96,7 @@ sorted(guides,
 
 ## 四、评价管理
 
-### 7. 差评审核
+### 差评审核
 ```http
 POST /api/campus/reviews/appeal
 ```
@@ -113,7 +113,7 @@ POST /api/campus/reviews/appeal
 
 ## 五、财务管理
 
-### 8. 收益提现
+### 收益提现
 ```http
 POST /api/campus/finance/withdraw
 ```
@@ -126,7 +126,7 @@ if (withdrawHistory.stream()
 }
 ```
 
-### 9. 分账回调
+### 分账回调
 ```http
 POST /api/campus/finance/notify
 ```
@@ -142,7 +142,7 @@ CREATE TABLE idempotent_keys (
 
 ## 六、认证体系
 
-### 10. 用户注册
+### 用户注册
 ```http
 POST /api/v1/auth/register
 ```
@@ -151,7 +151,7 @@ POST /api/v1/auth/register
 /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,20}$/
 ```
 
-### 11. 统一登录
+### 统一登录
 ```http
 POST /api/v1/auth/sso/{campus_code}
 ```
@@ -164,7 +164,7 @@ POST /api/v1/auth/sso/{campus_code}
 
 ## 七、Token管理
 
-### 12. Token刷新
+### Token刷新
 ```http
 POST /api/v1/auth/refresh
 ```
@@ -175,7 +175,7 @@ POST /api/v1/auth/refresh
 }
 ```
 
-### 13. 强制登出
+### 强制登出
 ```http
 DELETE /api/v1/auth/logout
 ```
@@ -188,7 +188,7 @@ redis.Setex("jwt_blacklist:"+token, "1", expiry)
 
 ## 八、密码管理
 
-### 14. 密码重置
+### 密码重置
 ```http
 POST /api/v1/auth/password/reset-request
 ```
