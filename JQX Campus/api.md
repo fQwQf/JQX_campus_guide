@@ -151,13 +151,13 @@ POST /api/v1/auth/register
 /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,20}$/
 ```
 
-### 统一登录
+### 登录
 ```http
-POST /api/v1/auth/sso/{campus_code}
+POST /api/v1/auth/login
 ```
 **OAuth2.0流程**：
 ```
-用户 → 校园认证中心 → 获取授权码 → 服务端换取令牌 → 返回JQX令牌
+用户 → 服务端换取令牌 → 返回Token
 ```
 
 ---
